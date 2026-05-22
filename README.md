@@ -1,28 +1,75 @@
-# Welcome to the Integrating With HubSpot I: Foundations Practicum
+# Integrating With HubSpot I: Foundations Practicum
 
-This repository is for the Integrating With HubSpot I: Foundations course. This practicum is one of two requirements for receiving your Integrating With HubSpot I: Foundations certification. You must also take the exam and receive a passing grade (at least 75%).
+This is my submission for the Integrating With HubSpot I: Foundations practicum.
 
-To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
+## Project Overview
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+This Node.js application uses Express, Axios, and Pug to connect to the HubSpot CRM API.
 
-___
-## Tips:
-- Commit to your repository often. Even if you make small tweaks to your code, it’s best to be committing to your repository frequently.
-- The subject of the custom object is up to you. Feel free to get creative!
-- Please create a test account and include your private app access token in your repo.
-- Ensure you re-merge any working branches into the main branch.
-- DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR REPOSITORY. 
+The app displays records from a HubSpot custom object and allows a user to create a new custom object record through a form.
 
-## Pre-requisites:
-- Using [Node](https://nodejs.org/en/download) and node packages
-- Using [Express](https://expressjs.com/en/starter/installing.html)
-- Using [Axios](https://axios-http.com/docs/intro)
-- Using [Pug templating system](https://pugjs.org/api/getting-started.html)
-- Using the command line
-- Using [Git and GitHub](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
+## HubSpot Private App
 
-## Requirements
-- All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
-- You must have at least two new routes in your index.js file and one new pug template for the homepage.
-- You must create a developer test account and link to it in your README.md file. Submissions that do not meet this requirement will not be considered.
+Private app name:
+
+Alexandre's Practicum Private App
+
+The private app access token is stored locally in a `.env` file and is not included in this repository.
+
+## Custom Object
+
+Custom object used:
+
+Books
+
+Custom object type:
+
+p51490362_books
+
+Object type ID:
+
+2-6917636
+
+Properties:
+
+- Name
+- Author
+- Genre
+
+## HubSpot Custom Object List View
+
+https://app.hubspot.com/contacts/51490362/objects/2-6917636/views/all/list
+
+## Routes
+
+- `GET /` - Displays Books custom object records in a table.
+- `GET /update-cobj` - Displays a form to create a new Book record.
+- `POST /update-cobj` - Creates a new Book record in HubSpot and redirects to the homepage.
+
+## Local Setup
+
+Create a `.env` file with the following variables:
+
+```env
+HUBSPOT_PRIVATE_APP_TOKEN=your-private-app-token
+CUSTOM_OBJECT_TYPE=p51490362_books
+PORT=3000
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the app:
+
+```bash
+node index.js
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
